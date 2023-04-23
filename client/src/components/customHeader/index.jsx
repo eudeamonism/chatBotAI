@@ -1,6 +1,6 @@
 import { ChatBubbleLeftRightIcon, PhoneIcon } from '@heroicons/react/24/solid';
 
-const CustomerHeader = ({ chat }) => {
+const CustomerHeader = (chat) => {
 
 	return (
 		<div className='chat-header'>
