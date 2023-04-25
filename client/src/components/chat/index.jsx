@@ -4,7 +4,7 @@ import StandardMessageForm from '@/components/customMessageForms/StandardMessage
 
 const Chat = () => {
     const chatProps = useMultiChatLogic(import.meta.env.VITE_PROJECT_ID, 'user', '123');
-    console.log(chatProps);
+    
 
 	return (
 		<div style={{ flexBasis: '100%' }}>
