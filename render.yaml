@@ -1,0 +1,7 @@
+services:
+  - name: server
+    env:
+      - key: PORT
+        value: 80
+    buildCommand: npm install && npm run build
+    startCommand: npm run app
