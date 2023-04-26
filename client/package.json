@@ -5,13 +5,11 @@
 	"type": "module",
 	"scripts": {
 		"start": "npm run dev",
-		"build": "cd client && npm install && npm run build",
-		"dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run start\""
+		"build": "cd client && npm install && npm run build"
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.0.17",
 		"@reduxjs/toolkit": "^1.9.5",
-		"concurrently": "^8.0.1",
 		"react": "^18.2.0",
 		"react-chat-engine-advanced": "^0.1.28",
 		"react-dom": "^18.2.0",
