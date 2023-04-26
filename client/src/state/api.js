@@ -1,8 +1,5 @@
-//Redux manages state while Redux Toolking allows us to embed request in actions easily
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-//SLICE, section of the store
-//To create an API slice, you can use the createApi() function. The createApi() function takes a configuration object as an argument. The configuration object specifies the base URL for the API, the query parameters, and the response handler.
 export const api = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
 	reducerPath: 'main',
@@ -15,7 +12,41 @@ export const api = createApi({
 				body: payload,
 			}),
 		}),
+		postAiCode: build.mutation({
+			query: (payload) => ({
+				url: 'openai/code',
+				method: 'POST',
+				body: payload,
+			}),
+		}),
+		postAiAssist: build.mutation({
+			query: (payload) => ({
+				url: 'openai/assist',
+				method: 'POST',
+				body: payload,
+			}),
+		}),
+		postLogin: build.mutation({
+			query: (payload) => ({
+				url: 'auth/login',
+				method: 'POST',
+				body: payload,
+			}),
+		}),
+		postSignUp: build.mutation({
+			query: (payload) => ({
+				url: 'auth/signup',
+				method: 'POST',
+				body: payload,
+			}),
+		}),
 	}),
 });
-//We must follow conventions of starting with use and ending with mutation for post requests
-export const { usePostAiTextMutation } = api;
+
+export const {
+	usePostAiTextMutation,
+	usePostAiCodeMutation,
+	usePostAiAssistMutation,
+	usePostLoginMutation,
+	usePostSignUpMutation,
+} = api;
