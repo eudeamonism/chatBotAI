@@ -6,9 +6,8 @@
 	"type": "module",
 	"scripts": {
 		"client": "npm run start --prefix client",
-		"start": "node index/server.js",
-		"app": "concurrently npm \"npm run start\" \"npm run client\"",
-		"build": "cd client && npm install && npm run build"
+		"start": "npm install && node index/server.js",
+		"app": "concurrently npm \"npm run start\" \"npm run client\""
 	},
 	"keywords": [],
 	"author": "",
